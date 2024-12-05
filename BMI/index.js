@@ -6,7 +6,7 @@ function calculateBMI() {
 
   let result = weight / (Math.pow(height, 2));
 
-  if (height == '' || weight == '' || height >= 200 || weight >= 200) {
+  if (height == '' || weight == '' || height >= 2 || weight >= 200) {
     alert('Hãy nhập giá trị hợp lệ')
   } else if (result < 18.5) {
     resultElement.innerHTML = 'Your BMI is '+result.toFixed(1) + ' (Underweight)';
