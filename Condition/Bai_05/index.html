@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="divContainer">
+        <label for="kt01">Hãy nhập điểm kiểm tra 1 </label>
+        <input id="kt01" type="input"/>
+
+        <label for="kt02">Hãy nhập điểm kiểm tra 2</label>
+        <input id="kt02" type="input" required/>
+
+        <label for="kt_giuaky">Hãy nhập điểm kiểm tra giữa kỳ</label>
+        <input id="kt_giuaky" type="input" required/>
+
+        <label for="kt_cuoiky">Hãy nhập Hãy nhập điểm kiểm tra cuối kỳ</label>
+        <input id="kt_cuoiky" type="input" required/>
+
+        <button onclick="check()">Check</button>
+
+        <div class="result" id="calResult" aria-required=""></div>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>
