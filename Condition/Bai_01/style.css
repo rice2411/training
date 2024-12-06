@@ -43,3 +43,8 @@ body {
     color: #333;
     border-radius: 10px;
 }
+
+.container .result {
+    margin-top: 20px;
+    font-size: 15px;
+}
