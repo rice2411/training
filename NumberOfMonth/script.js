@@ -1,23 +1,36 @@
+const month = document.getElementById('month');
+month.addEventListener('keydown', function (e) {
+  const value = e.key
+  var currentValue = month.value;
+  const controKeys = ['Backspace', 'ArrowLeft', 'ArrowRight'];
+  if (value == 0 && currentValue == 0 || (isNaN(value) && !(controKeys.includes(value))) || (currentValue + value) > 12) {
+    e.preventDefault();
+  }
+})
+
 
 function calculateDays() {
   const resultElement = document.getElementById('result');
+  let days = 28;
   //TODO 
-    const month = Number(document.getElementById('month').value);
-    var arr31days = [1,3,5,7,8,10,12];
-    var arr30days = [4,6,9,11];
+  const month = Number(document.getElementById('month').value);
+  switch (month) {
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+      days = 31;
+      break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+      days = 30
+      break;
 
-  switch (true) {
-    case (arr31days.includes(month)):
-      resultElement.textContent = `Month ${month} has 31 days`;
-      break;
-    case month == 2:
-      resultElement.textContent = `Month ${month} may have 28 days or 29 days`; 
-      break;
-    case (arr30days.includes(month)):
-      resultElement.textContent = `Month ${month} has 30 days.`;
-      break;
-    default:
-      alert('please enter a valid number')
-      break;
   }
+  resultElement.textContent = `Month ${month}  have ${days === 28 ? '28 or 29 days' : days + "days"}`;
 }
